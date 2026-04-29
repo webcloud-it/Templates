@@ -1,0 +1,49 @@
+{
+	"providerId": "sendinitaly.com",
+	"providerName": "Send in Italy",
+	"serviceId": "domain-authentication",
+	"serviceName": "Send in Italy Domain Authentication",
+	"version": 1,
+	"syncPubKeyDomain": "dc-sign.sendinitaly.com",
+	"syncRedirectDomain": "app.sendinitaly.com",
+	"logoUrl": "https://app.sendinitaly.com/assets/logo-domain-connect.png",
+	"description": "Configures SPF, DKIM, return-path and tracking DNS records required by Send in Italy for authenticated email delivery.",
+	"variableDescription": "SPF include rule, DKIM TXT record, return-path CNAME and tracking CNAME records generated dynamically by Send in Italy.",
+	"records": [
+		{
+			"groupId": "spf",
+			"type": "SPFM",
+			"host": "@",
+			"spfRules": "%spf_rules%",
+			"ttl": 3600
+		},
+		{
+			"groupId": "dkim",
+			"type": "TXT",
+			"host": "%dkim_host%",
+			"data": "%dkim_value%",
+			"ttl": 3600
+		},
+		{
+			"groupId": "return_path",
+			"type": "CNAME",
+			"host": "%return_path_host%",
+			"pointsTo": "%return_path_value%",
+			"ttl": 3600
+		},
+		{
+			"groupId": "tracking",
+			"type": "CNAME",
+			"host": "%tracking_host%",
+			"pointsTo": "%tracking_value%",
+			"ttl": 3600
+		},
+		{
+			"groupId": "tracking_return_path",
+			"type": "CNAME",
+			"host": "%tracking_return_path_host%",
+			"pointsTo": "%tracking_return_path_value%",
+			"ttl": 3600
+		}
+	]
+}
