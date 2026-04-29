@@ -4,7 +4,7 @@
 	"serviceId": "domain-authentication",
 	"serviceName": "Send in Italy Domain Authentication",
 	"version": 1,
-	
+	"syncBlock": false,
 	"syncPubKeyDomain": "dc-sign.sendinitaly.com",
 	"syncRedirectDomain": "app.sendinitaly.com",
 	"logoUrl": "https://app.sendinitaly.com/assets/logo-domain-connect.png",
